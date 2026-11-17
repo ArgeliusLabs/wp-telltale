@@ -1,0 +1,1594 @@
+{
+  "tool": "WP Telltale",
+  "version": "0.2.0",
+  "mode": "batch",
+  "schema_version": "1.0",
+  "observed_at": "2026-11-17T18:44:10+00:00",
+  "completed_at": "2026-11-17T18:44:10+00:00",
+  "demo": true,
+  "attribution_assessed": false,
+  "limitation": "Advertised WordPress translations are configuration clues. They do not reveal any account's selected dashboard language, nationality, location, or state affiliation. They do not establish a visitor-facing language switcher. Missing data means unknown. Hosting, agencies, imports, multilingual staff, copied templates, and compromised sites can explain apparent inconsistencies.",
+  "targets": [
+    "https://newsroom.example/",
+    "https://second-newsroom.example/"
+  ],
+  "rejected_inputs": [],
+  "duplicate_inputs": [],
+  "input_file": null,
+  "results": [
+    {
+      "target": "https://newsroom.example/",
+      "status": "observed",
+      "report": {
+        "tool": "WP Telltale",
+        "version": "0.2.0",
+        "target": "https://newsroom.example/",
+        "observed_at": "2026-11-17T18:44:10+00:00",
+        "demo": true,
+        "attribution_assessed": false,
+        "limitation": "Advertised WordPress translations are configuration clues. They do not reveal any account's selected dashboard language, nationality, location, or state affiliation. They do not establish a visitor-facing language switcher. Missing data means unknown. Hosting, agencies, imports, multilingual staff, copied templates, and compromised sites can explain apparent inconsistencies.",
+        "baseline": {
+          "expected_languages": [],
+          "expected_timezone": null
+        },
+        "wordpress": {
+          "rest_api_observed": true,
+          "api_root": "https://newsroom.example/wp-json/",
+          "source": {
+            "url": "https://newsroom.example/wp-json/",
+            "request_id": 2,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "3f203bc3e0bb2f4a7e234418b9b059adb62633e5d9664b069849c27c22eb53cc"
+          },
+          "name": "Fictional newsroom",
+          "description": "Offline classroom fixture",
+          "url": "https://newsroom.example",
+          "home": "https://newsroom.example",
+          "gmt_offset": 8,
+          "timezone_string": "Asia/Shanghai",
+          "namespaces": [
+            "wp/v2",
+            "example-demo/v1"
+          ],
+          "extension_language_fields": {}
+        },
+        "interface_locales": {
+          "availability": "advertised by public metadata",
+          "advertised": [
+            "en_US",
+            "zh_CN"
+          ],
+          "additional_packs_indicated": [
+            "zh_CN"
+          ],
+          "admin_selected_language": "not observed",
+          "dashboard_selected_language": "unknown",
+          "public_language_switcher": "not assessed",
+          "evidence": [
+            {
+              "kind": "REST users route enum",
+              "values": [
+                "",
+                "en_US",
+                "zh_CN"
+              ],
+              "source": {
+                "url": "https://newsroom.example/wp-json/",
+                "request_id": 2,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "3f203bc3e0bb2f4a7e234418b9b059adb62633e5d9664b069849c27c22eb53cc",
+                "json_pointer": "/routes/~1wp~1v2~1users/endpoints/1/args/locale/enum"
+              }
+            },
+            {
+              "kind": "Anonymous login language selector",
+              "values": [
+                "en_US",
+                "zh_CN"
+              ],
+              "source": {
+                "url": "https://newsroom.example/wp-login.php",
+                "request_id": 3,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "2c5d6221b05af6002ab18e2243afe547fdde658c314b9cb6713fa2fec8a18a23"
+              }
+            }
+          ]
+        },
+        "homepage": {
+          "html_language": "en-US",
+          "login_languages": [],
+          "meta": {
+            "og:locale": [
+              "en_US"
+            ],
+            "generator": [
+              "WordPress (fictional demo)"
+            ],
+            "google-adsense-platform-account": [
+              "ca-host-pub-1111111111111111"
+            ]
+          },
+          "references": [
+            {
+              "url": "https://newsroom.example/wp-json/",
+              "kind": "https://api.w.org/"
+            },
+            {
+              "url": "https://old-brand.example/",
+              "kind": "canonical"
+            },
+            {
+              "url": "https://newsroom.example/wp-content/themes/example-news/style.css",
+              "kind": "stylesheet"
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-DEMO123456",
+              "kind": "script"
+            },
+            {
+              "url": "https://old-brand.example/banner.jpg",
+              "kind": "inline CSS url"
+            },
+            {
+              "url": "https://assets.example/press.jpg",
+              "kind": "img"
+            }
+          ],
+          "hreflangs": [],
+          "rest_links": [
+            "https://newsroom.example/wp-json/"
+          ],
+          "asset_plugins": [],
+          "asset_themes": [
+            "example-news"
+          ],
+          "tracking_ids": {
+            "google_analytics_ga4": [
+              "G-DEMO123456"
+            ],
+            "google_adsense": [
+              "ca-pub-0000000000000000"
+            ],
+            "yandex_metrica": [
+              "12345678"
+            ]
+          },
+          "tracking_evidence": [
+            {
+              "kind": "google_analytics_ga4",
+              "value": "G-DEMO123456",
+              "source_url": "https://newsroom.example/",
+              "snippet": "/style.css\">\n<script src=\"https://www.googletagmanager.com/gtag/js?id=G-DEMO123456\"></script></head>\n<body><h1>Fictional English-language newsroom</h1><",
+              "source": {
+                "url": "https://newsroom.example/",
+                "request_id": 1,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+              }
+            },
+            {
+              "kind": "google_adsense",
+              "value": "ca-pub-0000000000000000",
+              "source_url": "https://newsroom.example/",
+              "snippet": "m</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<meta name=\"google-adsense-platform-account\" content=\"ca-host",
+              "source": {
+                "url": "https://newsroom.example/",
+                "request_id": 1,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+              }
+            },
+            {
+              "kind": "yandex_metrica",
+              "value": "12345678",
+              "source_url": "https://newsroom.example/",
+              "snippet": "ipt></head>\n<body><h1>Fictional English-language newsroom</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<",
+              "source": {
+                "url": "https://newsroom.example/",
+                "request_id": 1,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+              }
+            }
+          ],
+          "excluded_tracking_ids": [
+            {
+              "kind": "google_adsense_platform",
+              "value": "ca-host-pub-1111111111111111",
+              "reason": "Platform account metadata; excluded from site publisher pivots and cross-host matches."
+            }
+          ],
+          "source": {
+            "url": "https://newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+          },
+          "content_language": null
+        },
+        "login": {
+          "html_language": "en-US",
+          "login_languages": [
+            "en_US",
+            "zh_CN"
+          ],
+          "meta": {},
+          "references": [],
+          "hreflangs": [],
+          "rest_links": [],
+          "asset_plugins": [],
+          "asset_themes": [],
+          "tracking_ids": {},
+          "tracking_evidence": [],
+          "excluded_tracking_ids": [],
+          "source": {
+            "url": "https://newsroom.example/wp-login.php",
+            "request_id": 3,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "2c5d6221b05af6002ab18e2243afe547fdde658c314b9cb6713fa2fec8a18a23"
+          },
+          "content_language": null
+        },
+        "samples": {
+          "public_authors": {
+            "items": [
+              {
+                "id": 1,
+                "name": "Demo Editor",
+                "slug": "demo-editor",
+                "url": "https://agency.example/",
+                "link": "https://newsroom.example/author/demo-editor/"
+              }
+            ],
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e0a06b6169a994b330c7a9fc21925ca39eed41948e98bb441b907ec4b601d04"
+            },
+            "reported_total": null
+          },
+          "recent_posts": {
+            "items": [
+              {
+                "id": 9,
+                "date": "2025-11-20T16:00:00",
+                "date_gmt": "2025-11-20T08:00:00",
+                "slug": "hello-world",
+                "link": "https://newsroom.example/hello-world/",
+                "title": {
+                  "rendered": "Fictional local headline"
+                },
+                "author": 1,
+                "derived_publication_offset_hours": 8.0
+              }
+            ],
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 5,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "b0d785247aa71e824cf53378592945596412b2db2f10f82c98aebfc123ddeaab"
+            },
+            "reported_total": null
+          },
+          "oldest_posts": {
+            "items": [
+              {
+                "id": 1,
+                "date": "2025-11-20T16:00:00",
+                "date_gmt": "2025-11-20T08:00:00",
+                "slug": "hello-world",
+                "link": "https://newsroom.example/hello-world/",
+                "title": {
+                  "rendered": "世界，您好！"
+                },
+                "author": 1,
+                "derived_publication_offset_hours": 8.0
+              }
+            ],
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "ba5d50a87f4168134e6d64d51060a02e6aace4cdf941034a0cfa758ca99f28fa"
+            },
+            "reported_total": null
+          },
+          "media": {
+            "items": [
+              {
+                "id": 2,
+                "slug": "example-image",
+                "source_url": "https://newsroom.example/wp-content/uploads/2025/11/%E6%B5%8B%E8%AF%95.jpg",
+                "title": {
+                  "rendered": "Example image"
+                },
+                "media_details": {
+                  "image_meta": {
+                    "credit": "Demo supplier",
+                    "camera": ""
+                  }
+                },
+                "decoded_filename": "测试.jpg"
+              }
+            ],
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "7a20847db15665339cce2fe06ac00427bed2c16b7e4ffcc11474a332c06d240d"
+            },
+            "reported_total": null
+          }
+        },
+        "review_cues": [
+          {
+            "signal": "Advertised translation differs from homepage declaration",
+            "detail": "Homepage declares en-US; additional translation available: zh_CN",
+            "interpretation": "Selected dashboard language and a visitor-facing switcher are not established. Homepage HTML is a declaration, not detected prose language."
+          }
+        ],
+        "coverage": [
+          {
+            "check": "Homepage",
+            "status": "observed",
+            "detail": "Public HTML and declarations",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "check": "WordPress REST index",
+            "status": "observed",
+            "detail": "Public route schema and site configuration",
+            "source": {
+              "url": "https://newsroom.example/wp-json/",
+              "request_id": 2,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3f203bc3e0bb2f4a7e234418b9b059adb62633e5d9664b069849c27c22eb53cc"
+            }
+          },
+          {
+            "check": "Login language selector",
+            "status": "observed",
+            "detail": "Available choices; absence is not proof that packs are absent",
+            "source": {
+              "url": "https://newsroom.example/wp-login.php",
+              "request_id": 3,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2c5d6221b05af6002ab18e2243afe547fdde658c314b9cb6713fa2fec8a18a23"
+            }
+          },
+          {
+            "check": "public_authors",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e0a06b6169a994b330c7a9fc21925ca39eed41948e98bb441b907ec4b601d04"
+            }
+          },
+          {
+            "check": "recent_posts",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 5,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "b0d785247aa71e824cf53378592945596412b2db2f10f82c98aebfc123ddeaab"
+            }
+          },
+          {
+            "check": "oldest_posts",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "ba5d50a87f4168134e6d64d51060a02e6aace4cdf941034a0cfa758ca99f28fa"
+            }
+          },
+          {
+            "check": "media",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "7a20847db15665339cce2fe06ac00427bed2c16b7e4ffcc11474a332c06d240d"
+            }
+          }
+        ],
+        "references": [
+          {
+            "url": "https://newsroom.example/wp-json/",
+            "kind": "https://api.w.org/",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "url": "https://old-brand.example/",
+            "kind": "canonical",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "url": "https://newsroom.example/wp-content/themes/example-news/style.css",
+            "kind": "stylesheet",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "url": "https://www.googletagmanager.com/gtag/js?id=G-DEMO123456",
+            "kind": "script",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "url": "https://old-brand.example/banner.jpg",
+            "kind": "inline CSS url",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "url": "https://assets.example/press.jpg",
+            "kind": "img",
+            "source": {
+              "url": "https://newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+            }
+          },
+          {
+            "url": "https://newsroom.example",
+            "kind": "REST home",
+            "source": {
+              "url": "https://newsroom.example/wp-json/",
+              "request_id": 2,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3f203bc3e0bb2f4a7e234418b9b059adb62633e5d9664b069849c27c22eb53cc",
+              "json_pointer": "/home"
+            }
+          },
+          {
+            "url": "https://newsroom.example",
+            "kind": "REST url",
+            "source": {
+              "url": "https://newsroom.example/wp-json/",
+              "request_id": 2,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "3f203bc3e0bb2f4a7e234418b9b059adb62633e5d9664b069849c27c22eb53cc",
+              "json_pointer": "/url"
+            }
+          },
+          {
+            "url": "https://agency.example/",
+            "kind": "public_authors url",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e0a06b6169a994b330c7a9fc21925ca39eed41948e98bb441b907ec4b601d04"
+            }
+          },
+          {
+            "url": "https://newsroom.example/author/demo-editor/",
+            "kind": "public_authors link",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e0a06b6169a994b330c7a9fc21925ca39eed41948e98bb441b907ec4b601d04"
+            }
+          },
+          {
+            "url": "https://newsroom.example/hello-world/",
+            "kind": "recent_posts link",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 5,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "b0d785247aa71e824cf53378592945596412b2db2f10f82c98aebfc123ddeaab"
+            }
+          },
+          {
+            "url": "https://newsroom.example/hello-world/",
+            "kind": "oldest_posts link",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "ba5d50a87f4168134e6d64d51060a02e6aace4cdf941034a0cfa758ca99f28fa"
+            }
+          },
+          {
+            "url": "https://newsroom.example/wp-content/uploads/2025/11/%E6%B5%8B%E8%AF%95.jpg",
+            "kind": "media source_url",
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "7a20847db15665339cce2fe06ac00427bed2c16b7e4ffcc11474a332c06d240d"
+            }
+          }
+        ],
+        "script_observations": [
+          {
+            "sample": "oldest_posts",
+            "id": 1,
+            "field": "title",
+            "value": "世界，您好！",
+            "scripts": [
+              "Han characters (several languages)"
+            ],
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "ba5d50a87f4168134e6d64d51060a02e6aace4cdf941034a0cfa758ca99f28fa"
+            }
+          },
+          {
+            "sample": "media",
+            "id": 2,
+            "field": "filename",
+            "value": "测试.jpg",
+            "scripts": [
+              "Han characters (several languages)"
+            ],
+            "source": {
+              "url": "https://newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "7a20847db15665339cce2fe06ac00427bed2c16b7e4ffcc11474a332c06d240d"
+            }
+          }
+        ],
+        "external_reference_hosts": [
+          {
+            "host": "agency.example",
+            "contexts": [
+              "public_authors url"
+            ]
+          },
+          {
+            "host": "assets.example",
+            "contexts": [
+              "img"
+            ]
+          },
+          {
+            "host": "old-brand.example",
+            "contexts": [
+              "canonical",
+              "inline CSS url"
+            ]
+          },
+          {
+            "host": "www.googletagmanager.com",
+            "contexts": [
+              "script"
+            ]
+          }
+        ],
+        "publication_offset_counts": {
+          "8.0": 2
+        },
+        "requests": [
+          {
+            "id": 1,
+            "url": "https://newsroom.example/",
+            "method": "GET",
+            "purpose": "homepage",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "bytes": 808,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+          },
+          {
+            "id": 2,
+            "url": "https://newsroom.example/wp-json/",
+            "method": "GET",
+            "purpose": "REST index",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 468,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "3f203bc3e0bb2f4a7e234418b9b059adb62633e5d9664b069849c27c22eb53cc"
+          },
+          {
+            "id": 3,
+            "url": "https://newsroom.example/wp-login.php",
+            "method": "GET",
+            "purpose": "anonymous login language selector",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "bytes": 183,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "2c5d6221b05af6002ab18e2243afe547fdde658c314b9cb6713fa2fec8a18a23"
+          },
+          {
+            "id": 4,
+            "url": "https://newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+            "method": "GET",
+            "purpose": "public_authors",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 147,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "2e0a06b6169a994b330c7a9fc21925ca39eed41948e98bb441b907ec4b601d04"
+          },
+          {
+            "id": 5,
+            "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+            "method": "GET",
+            "purpose": "recent_posts",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 213,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "b0d785247aa71e824cf53378592945596412b2db2f10f82c98aebfc123ddeaab"
+          },
+          {
+            "id": 6,
+            "url": "https://newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+            "method": "GET",
+            "purpose": "oldest_posts",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 207,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "ba5d50a87f4168134e6d64d51060a02e6aace4cdf941034a0cfa758ca99f28fa"
+          },
+          {
+            "id": 7,
+            "url": "https://newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+            "method": "GET",
+            "purpose": "media",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 244,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "7a20847db15665339cce2fe06ac00427bed2c16b7e4ffcc11474a332c06d240d"
+          }
+        ],
+        "warnings": [],
+        "completed_at": "2026-11-17T18:44:10+00:00"
+      },
+      "error": null
+    },
+    {
+      "target": "https://second-newsroom.example/",
+      "status": "observed",
+      "report": {
+        "tool": "WP Telltale",
+        "version": "0.2.0",
+        "target": "https://second-newsroom.example/",
+        "observed_at": "2026-11-17T18:44:10+00:00",
+        "demo": true,
+        "attribution_assessed": false,
+        "limitation": "Advertised WordPress translations are configuration clues. They do not reveal any account's selected dashboard language, nationality, location, or state affiliation. They do not establish a visitor-facing language switcher. Missing data means unknown. Hosting, agencies, imports, multilingual staff, copied templates, and compromised sites can explain apparent inconsistencies.",
+        "baseline": {
+          "expected_languages": [],
+          "expected_timezone": null
+        },
+        "wordpress": {
+          "rest_api_observed": true,
+          "api_root": "https://second-newsroom.example/wp-json/",
+          "source": {
+            "url": "https://second-newsroom.example/wp-json/",
+            "request_id": 2,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "2e34272cd1909c7d9f77b4aec2633bbec53c0229a60e8f8b5ed7e1f31c420227"
+          },
+          "name": "Fictional newsroom",
+          "description": "Offline classroom fixture",
+          "url": "https://second-newsroom.example",
+          "home": "https://second-newsroom.example",
+          "gmt_offset": 8,
+          "timezone_string": "Asia/Singapore",
+          "namespaces": [
+            "wp/v2",
+            "example-demo/v1"
+          ],
+          "extension_language_fields": {}
+        },
+        "interface_locales": {
+          "availability": "advertised by public metadata",
+          "advertised": [
+            "en_US",
+            "ru_RU"
+          ],
+          "additional_packs_indicated": [
+            "ru_RU"
+          ],
+          "admin_selected_language": "not observed",
+          "dashboard_selected_language": "unknown",
+          "public_language_switcher": "not assessed",
+          "evidence": [
+            {
+              "kind": "REST users route enum",
+              "values": [
+                "",
+                "en_US",
+                "ru_RU"
+              ],
+              "source": {
+                "url": "https://second-newsroom.example/wp-json/",
+                "request_id": 2,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "2e34272cd1909c7d9f77b4aec2633bbec53c0229a60e8f8b5ed7e1f31c420227",
+                "json_pointer": "/routes/~1wp~1v2~1users/endpoints/1/args/locale/enum"
+              }
+            },
+            {
+              "kind": "Anonymous login language selector",
+              "values": [
+                "en_US",
+                "ru_RU"
+              ],
+              "source": {
+                "url": "https://second-newsroom.example/wp-login.php",
+                "request_id": 3,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "ce29c0d95ae08061155d2b2b94140ed5bf540e7569db4b70d0e4dc62408c6472"
+              }
+            }
+          ]
+        },
+        "homepage": {
+          "html_language": "en-US",
+          "login_languages": [],
+          "meta": {
+            "og:locale": [
+              "en_US"
+            ],
+            "generator": [
+              "WordPress (fictional demo)"
+            ],
+            "google-adsense-platform-account": [
+              "ca-host-pub-1111111111111111"
+            ]
+          },
+          "references": [
+            {
+              "url": "https://second-newsroom.example/wp-json/",
+              "kind": "https://api.w.org/"
+            },
+            {
+              "url": "https://old-brand.example/",
+              "kind": "canonical"
+            },
+            {
+              "url": "https://second-newsroom.example/wp-content/themes/example-news/style.css",
+              "kind": "stylesheet"
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-DEMO123456",
+              "kind": "script"
+            },
+            {
+              "url": "https://old-brand.example/banner.jpg",
+              "kind": "inline CSS url"
+            },
+            {
+              "url": "https://assets.example/press.jpg",
+              "kind": "img"
+            }
+          ],
+          "hreflangs": [],
+          "rest_links": [
+            "https://second-newsroom.example/wp-json/"
+          ],
+          "asset_plugins": [],
+          "asset_themes": [
+            "example-news"
+          ],
+          "tracking_ids": {
+            "google_analytics_ga4": [
+              "G-DEMO123456"
+            ],
+            "google_adsense": [
+              "ca-pub-0000000000000000"
+            ],
+            "yandex_metrica": [
+              "12345678"
+            ]
+          },
+          "tracking_evidence": [
+            {
+              "kind": "google_analytics_ga4",
+              "value": "G-DEMO123456",
+              "source_url": "https://second-newsroom.example/",
+              "snippet": "/style.css\">\n<script src=\"https://www.googletagmanager.com/gtag/js?id=G-DEMO123456\"></script></head>\n<body><h1>Fictional English-language newsroom</h1><",
+              "source": {
+                "url": "https://second-newsroom.example/",
+                "request_id": 1,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+              }
+            },
+            {
+              "kind": "google_adsense",
+              "value": "ca-pub-0000000000000000",
+              "source_url": "https://second-newsroom.example/",
+              "snippet": "m</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<meta name=\"google-adsense-platform-account\" content=\"ca-host",
+              "source": {
+                "url": "https://second-newsroom.example/",
+                "request_id": 1,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+              }
+            },
+            {
+              "kind": "yandex_metrica",
+              "value": "12345678",
+              "source_url": "https://second-newsroom.example/",
+              "snippet": "ipt></head>\n<body><h1>Fictional English-language newsroom</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<",
+              "source": {
+                "url": "https://second-newsroom.example/",
+                "request_id": 1,
+                "observed_at": "2026-11-17T18:44:10+00:00",
+                "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+              }
+            }
+          ],
+          "excluded_tracking_ids": [
+            {
+              "kind": "google_adsense_platform",
+              "value": "ca-host-pub-1111111111111111",
+              "reason": "Platform account metadata; excluded from site publisher pivots and cross-host matches."
+            }
+          ],
+          "source": {
+            "url": "https://second-newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+          },
+          "content_language": null
+        },
+        "login": {
+          "html_language": "en-US",
+          "login_languages": [
+            "en_US",
+            "ru_RU"
+          ],
+          "meta": {},
+          "references": [],
+          "hreflangs": [],
+          "rest_links": [],
+          "asset_plugins": [],
+          "asset_themes": [],
+          "tracking_ids": {},
+          "tracking_evidence": [],
+          "excluded_tracking_ids": [],
+          "source": {
+            "url": "https://second-newsroom.example/wp-login.php",
+            "request_id": 3,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "ce29c0d95ae08061155d2b2b94140ed5bf540e7569db4b70d0e4dc62408c6472"
+          },
+          "content_language": null
+        },
+        "samples": {
+          "public_authors": {
+            "items": [
+              {
+                "id": 1,
+                "name": "Demo Editor",
+                "slug": "demo-editor",
+                "url": "https://agency.example/",
+                "link": "https://second-newsroom.example/author/demo-editor/"
+              }
+            ],
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "1e12c1625e48ad24b1afc9c1b69339a5d08b0bc3f9029a86254bdb03701f15c5"
+            },
+            "reported_total": null
+          },
+          "recent_posts": {
+            "items": [
+              {
+                "id": 9,
+                "date": "2025-11-20T16:00:00",
+                "date_gmt": "2025-11-20T08:00:00",
+                "slug": "hello-world",
+                "link": "https://second-newsroom.example/hello-world/",
+                "title": {
+                  "rendered": "Fictional local headline"
+                },
+                "author": 1,
+                "derived_publication_offset_hours": 8.0
+              }
+            ],
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 5,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5adb02d4318c3dd56ee6a9fa3a3f763eda10b85d7b72857d1784695cee1e7bf4"
+            },
+            "reported_total": null
+          },
+          "oldest_posts": {
+            "items": [
+              {
+                "id": 1,
+                "date": "2025-11-20T16:00:00",
+                "date_gmt": "2025-11-20T08:00:00",
+                "slug": "hello-world",
+                "link": "https://second-newsroom.example/hello-world/",
+                "title": {
+                  "rendered": "世界，您好！"
+                },
+                "author": 1,
+                "derived_publication_offset_hours": 8.0
+              }
+            ],
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5f6999cc26e1c06ac5154b040062e6d32e7053731552e0f0a4a3658b41c79e70"
+            },
+            "reported_total": null
+          },
+          "media": {
+            "items": [
+              {
+                "id": 2,
+                "slug": "example-image",
+                "source_url": "https://second-newsroom.example/wp-content/uploads/2025/11/%E6%B5%8B%E8%AF%95.jpg",
+                "title": {
+                  "rendered": "Example image"
+                },
+                "media_details": {
+                  "image_meta": {
+                    "credit": "Demo supplier",
+                    "camera": ""
+                  }
+                },
+                "decoded_filename": "测试.jpg"
+              }
+            ],
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "542b23ba9f17e4e837672f617c67514776d1109e1bc1212752dd242b769ce1c9"
+            },
+            "reported_total": null
+          }
+        },
+        "review_cues": [
+          {
+            "signal": "Advertised translation differs from homepage declaration",
+            "detail": "Homepage declares en-US; additional translation available: ru_RU",
+            "interpretation": "Selected dashboard language and a visitor-facing switcher are not established. Homepage HTML is a declaration, not detected prose language."
+          }
+        ],
+        "coverage": [
+          {
+            "check": "Homepage",
+            "status": "observed",
+            "detail": "Public HTML and declarations",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "check": "WordPress REST index",
+            "status": "observed",
+            "detail": "Public route schema and site configuration",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/",
+              "request_id": 2,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e34272cd1909c7d9f77b4aec2633bbec53c0229a60e8f8b5ed7e1f31c420227"
+            }
+          },
+          {
+            "check": "Login language selector",
+            "status": "observed",
+            "detail": "Available choices; absence is not proof that packs are absent",
+            "source": {
+              "url": "https://second-newsroom.example/wp-login.php",
+              "request_id": 3,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "ce29c0d95ae08061155d2b2b94140ed5bf540e7569db4b70d0e4dc62408c6472"
+            }
+          },
+          {
+            "check": "public_authors",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "1e12c1625e48ad24b1afc9c1b69339a5d08b0bc3f9029a86254bdb03701f15c5"
+            }
+          },
+          {
+            "check": "recent_posts",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 5,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5adb02d4318c3dd56ee6a9fa3a3f763eda10b85d7b72857d1784695cee1e7bf4"
+            }
+          },
+          {
+            "check": "oldest_posts",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5f6999cc26e1c06ac5154b040062e6d32e7053731552e0f0a4a3658b41c79e70"
+            }
+          },
+          {
+            "check": "media",
+            "status": "observed",
+            "detail": "1 public records; one page only",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "542b23ba9f17e4e837672f617c67514776d1109e1bc1212752dd242b769ce1c9"
+            }
+          }
+        ],
+        "references": [
+          {
+            "url": "https://second-newsroom.example/wp-json/",
+            "kind": "https://api.w.org/",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "url": "https://old-brand.example/",
+            "kind": "canonical",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example/wp-content/themes/example-news/style.css",
+            "kind": "stylesheet",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "url": "https://www.googletagmanager.com/gtag/js?id=G-DEMO123456",
+            "kind": "script",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "url": "https://old-brand.example/banner.jpg",
+            "kind": "inline CSS url",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "url": "https://assets.example/press.jpg",
+            "kind": "img",
+            "source": {
+              "url": "https://second-newsroom.example/",
+              "request_id": 1,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example",
+            "kind": "REST home",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/",
+              "request_id": 2,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e34272cd1909c7d9f77b4aec2633bbec53c0229a60e8f8b5ed7e1f31c420227",
+              "json_pointer": "/home"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example",
+            "kind": "REST url",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/",
+              "request_id": 2,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "2e34272cd1909c7d9f77b4aec2633bbec53c0229a60e8f8b5ed7e1f31c420227",
+              "json_pointer": "/url"
+            }
+          },
+          {
+            "url": "https://agency.example/",
+            "kind": "public_authors url",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "1e12c1625e48ad24b1afc9c1b69339a5d08b0bc3f9029a86254bdb03701f15c5"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example/author/demo-editor/",
+            "kind": "public_authors link",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+              "request_id": 4,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "1e12c1625e48ad24b1afc9c1b69339a5d08b0bc3f9029a86254bdb03701f15c5"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example/hello-world/",
+            "kind": "recent_posts link",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 5,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5adb02d4318c3dd56ee6a9fa3a3f763eda10b85d7b72857d1784695cee1e7bf4"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example/hello-world/",
+            "kind": "oldest_posts link",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5f6999cc26e1c06ac5154b040062e6d32e7053731552e0f0a4a3658b41c79e70"
+            }
+          },
+          {
+            "url": "https://second-newsroom.example/wp-content/uploads/2025/11/%E6%B5%8B%E8%AF%95.jpg",
+            "kind": "media source_url",
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "542b23ba9f17e4e837672f617c67514776d1109e1bc1212752dd242b769ce1c9"
+            }
+          }
+        ],
+        "script_observations": [
+          {
+            "sample": "oldest_posts",
+            "id": 1,
+            "field": "title",
+            "value": "世界，您好！",
+            "scripts": [
+              "Han characters (several languages)"
+            ],
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+              "request_id": 6,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "5f6999cc26e1c06ac5154b040062e6d32e7053731552e0f0a4a3658b41c79e70"
+            }
+          },
+          {
+            "sample": "media",
+            "id": 2,
+            "field": "filename",
+            "value": "测试.jpg",
+            "scripts": [
+              "Han characters (several languages)"
+            ],
+            "source": {
+              "url": "https://second-newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+              "request_id": 7,
+              "observed_at": "2026-11-17T18:44:10+00:00",
+              "sha256": "542b23ba9f17e4e837672f617c67514776d1109e1bc1212752dd242b769ce1c9"
+            }
+          }
+        ],
+        "external_reference_hosts": [
+          {
+            "host": "agency.example",
+            "contexts": [
+              "public_authors url"
+            ]
+          },
+          {
+            "host": "assets.example",
+            "contexts": [
+              "img"
+            ]
+          },
+          {
+            "host": "old-brand.example",
+            "contexts": [
+              "canonical",
+              "inline CSS url"
+            ]
+          },
+          {
+            "host": "www.googletagmanager.com",
+            "contexts": [
+              "script"
+            ]
+          }
+        ],
+        "publication_offset_counts": {
+          "8.0": 2
+        },
+        "requests": [
+          {
+            "id": 1,
+            "url": "https://second-newsroom.example/",
+            "method": "GET",
+            "purpose": "homepage",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "bytes": 815,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+          },
+          {
+            "id": 2,
+            "url": "https://second-newsroom.example/wp-json/",
+            "method": "GET",
+            "purpose": "REST index",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 483,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "2e34272cd1909c7d9f77b4aec2633bbec53c0229a60e8f8b5ed7e1f31c420227"
+          },
+          {
+            "id": 3,
+            "url": "https://second-newsroom.example/wp-login.php",
+            "method": "GET",
+            "purpose": "anonymous login language selector",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "bytes": 185,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "ce29c0d95ae08061155d2b2b94140ed5bf540e7569db4b70d0e4dc62408c6472"
+          },
+          {
+            "id": 4,
+            "url": "https://second-newsroom.example/wp-json/wp/v2/users?per_page=10&context=view&_fields=id%2Cname%2Cslug%2Curl%2Clink%2Cdescription%2Cavatar_urls",
+            "method": "GET",
+            "purpose": "public_authors",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 154,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "1e12c1625e48ad24b1afc9c1b69339a5d08b0bc3f9029a86254bdb03701f15c5"
+          },
+          {
+            "id": 5,
+            "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=10&orderby=date&order=desc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+            "method": "GET",
+            "purpose": "recent_posts",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 220,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "5adb02d4318c3dd56ee6a9fa3a3f763eda10b85d7b72857d1784695cee1e7bf4"
+          },
+          {
+            "id": 6,
+            "url": "https://second-newsroom.example/wp-json/wp/v2/posts?per_page=5&orderby=date&order=asc&_fields=id%2Cdate%2Cdate_gmt%2Cmodified%2Cmodified_gmt%2Cslug%2Clink%2Ctitle%2Cauthor",
+            "method": "GET",
+            "purpose": "oldest_posts",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 214,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "5f6999cc26e1c06ac5154b040062e6d32e7053731552e0f0a4a3658b41c79e70"
+          },
+          {
+            "id": 7,
+            "url": "https://second-newsroom.example/wp-json/wp/v2/media?per_page=10&_fields=id%2Cdate%2Cdate_gmt%2Cslug%2Csource_url%2Clink%2Ctitle%2Cauthor%2Cmedia_details",
+            "method": "GET",
+            "purpose": "media",
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "status": 200,
+            "headers": {
+              "content-type": "application/json; charset=utf-8"
+            },
+            "bytes": 251,
+            "truncated": false,
+            "error": null,
+            "elapsed_seconds": 0.0,
+            "sha256": "542b23ba9f17e4e837672f617c67514776d1109e1bc1212752dd242b769ce1c9"
+          }
+        ],
+        "warnings": [],
+        "completed_at": "2026-11-17T18:44:10+00:00"
+      },
+      "error": null
+    }
+  ],
+  "pending_targets": [],
+  "shared_identifiers": [
+    {
+      "kind": "google_adsense",
+      "value": "ca-pub-0000000000000000",
+      "hosts": [
+        "newsroom.example",
+        "second-newsroom.example"
+      ],
+      "targets": [
+        "https://newsroom.example/",
+        "https://second-newsroom.example/"
+      ],
+      "evidence": [
+        {
+          "target": "https://newsroom.example/",
+          "kind": "google_adsense",
+          "value": "ca-pub-0000000000000000",
+          "source_url": "https://newsroom.example/",
+          "snippet": "m</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<meta name=\"google-adsense-platform-account\" content=\"ca-host",
+          "source": {
+            "url": "https://newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+          }
+        },
+        {
+          "target": "https://second-newsroom.example/",
+          "kind": "google_adsense",
+          "value": "ca-pub-0000000000000000",
+          "source_url": "https://second-newsroom.example/",
+          "snippet": "m</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<meta name=\"google-adsense-platform-account\" content=\"ca-host",
+          "source": {
+            "url": "https://second-newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+          }
+        }
+      ],
+      "interpretation": "The same identifier string appears on distinct target hosts. Execution, current ownership and common control are unverified; copying or shared service providers can explain a match."
+    },
+    {
+      "kind": "google_analytics_ga4",
+      "value": "G-DEMO123456",
+      "hosts": [
+        "newsroom.example",
+        "second-newsroom.example"
+      ],
+      "targets": [
+        "https://newsroom.example/",
+        "https://second-newsroom.example/"
+      ],
+      "evidence": [
+        {
+          "target": "https://newsroom.example/",
+          "kind": "google_analytics_ga4",
+          "value": "G-DEMO123456",
+          "source_url": "https://newsroom.example/",
+          "snippet": "/style.css\">\n<script src=\"https://www.googletagmanager.com/gtag/js?id=G-DEMO123456\"></script></head>\n<body><h1>Fictional English-language newsroom</h1><",
+          "source": {
+            "url": "https://newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+          }
+        },
+        {
+          "target": "https://second-newsroom.example/",
+          "kind": "google_analytics_ga4",
+          "value": "G-DEMO123456",
+          "source_url": "https://second-newsroom.example/",
+          "snippet": "/style.css\">\n<script src=\"https://www.googletagmanager.com/gtag/js?id=G-DEMO123456\"></script></head>\n<body><h1>Fictional English-language newsroom</h1><",
+          "source": {
+            "url": "https://second-newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+          }
+        }
+      ],
+      "interpretation": "The same identifier string appears on distinct target hosts. Execution, current ownership and common control are unverified; copying or shared service providers can explain a match."
+    },
+    {
+      "kind": "yandex_metrica",
+      "value": "12345678",
+      "hosts": [
+        "newsroom.example",
+        "second-newsroom.example"
+      ],
+      "targets": [
+        "https://newsroom.example/",
+        "https://second-newsroom.example/"
+      ],
+      "evidence": [
+        {
+          "target": "https://newsroom.example/",
+          "kind": "yandex_metrica",
+          "value": "12345678",
+          "source_url": "https://newsroom.example/",
+          "snippet": "ipt></head>\n<body><h1>Fictional English-language newsroom</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<",
+          "source": {
+            "url": "https://newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "3a587dfc2eed84f83b46d9aed1a2f97dc5302e7f5605e756239db10763c70782"
+          }
+        },
+        {
+          "target": "https://second-newsroom.example/",
+          "kind": "yandex_metrica",
+          "value": "12345678",
+          "source_url": "https://second-newsroom.example/",
+          "snippet": "ipt></head>\n<body><h1>Fictional English-language newsroom</h1><script>ym(12345678, 'init', {});</script>\n<ins data-ad-client=\"ca-pub-0000000000000000\"></ins>\n<",
+          "source": {
+            "url": "https://second-newsroom.example/",
+            "request_id": 1,
+            "observed_at": "2026-11-17T18:44:10+00:00",
+            "sha256": "0230994c54f02c1db937bc9b7e654d3d90507b7fbc1f85fbb9307466b2028d84"
+          }
+        }
+      ],
+      "interpretation": "The same identifier string appears on distinct target hosts. Execution, current ownership and common control are unverified; copying or shared service providers can explain a match."
+    }
+  ],
+  "interrupted": false,
+  "local_errors": [],
+  "baseline": {
+    "expected_languages": [],
+    "expected_timezone": null
+  },
+  "parameters": {
+    "sample": 10,
+    "quick": false,
+    "timeout": 12,
+    "delay": 0.35,
+    "max_requests_per_target": 20,
+    "concurrency": 1
+  },
+  "counts": {
+    "accepted_targets": 2,
+    "attempted_targets": 2,
+    "observed_targets": 2,
+    "unknown_targets": 0,
+    "error_targets": 0,
+    "interrupted_targets": 0,
+    "pending_targets": 0,
+    "rejected_inputs": 0,
+    "duplicates_skipped": 0,
+    "wordpress_rest_observed": 2,
+    "targets_with_review_cues": 2,
+    "shared_identifiers": 3,
+    "requests": 14
+  },
+  "output_files": {
+    "json": "examples/demo_batch_report.json",
+    "html": "examples/demo_batch_report.html",
+    "csv": "examples/demo_batch_report.csv"
+  }
+}

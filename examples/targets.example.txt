@@ -1,0 +1,8 @@
+# Fictional syntax examples. Replace with your own investigation targets.
+# Use --demo-batch for a built-in offline demonstration.
+https://newsroom.example/
+publisher.example
+https://magazine.example/blog/
+
+# Exact normalized duplicates are skipped.
+https://NEWSROOM.EXAMPLE

@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+# Keep live evidence and working target lists out of commits.
+# Fictional examples under examples/ remain tracked.
+evidence/
+reports/
+ci-output/
+/targets*.txt
+/case-*/
+/report*.json
+/report*.html
+/report*.csv
+/demo-report.*
+/first-pass.*
+/detailed-report.*
+*.zip
